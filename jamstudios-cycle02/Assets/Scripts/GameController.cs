@@ -41,17 +41,7 @@ public class GameController : MonoBehaviour {
         
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!isGamePaused)
-            {
-                ChangeTimeState(0.0f);
-                isGamePaused = true;
-            }
-            else
-            {
-                ChangeTimeState(1.0f);
-                isGamePaused = false;
-            }
-
+            ChangePauseState();
             menu.SetActive(isGamePaused);
         }
     }
@@ -59,6 +49,20 @@ public class GameController : MonoBehaviour {
     public void ChangeTimeState(float newGameSpeed)
     {
         Time.timeScale = newGameSpeed;
+    }
+
+    public void ChangePauseState()
+    {
+        if (!isGamePaused)
+        {
+            ChangeTimeState(0.0f);
+            isGamePaused = true;
+        }
+        else
+        {
+            ChangeTimeState(1.0f);
+            isGamePaused = false;
+        }
     }
 
     public void LoadScene(string name)
@@ -76,7 +80,7 @@ public class GameController : MonoBehaviour {
         SceneManager.LoadSceneAsync(name);
     }
 
-    public void LoadSceneAAsync(int buildIndex)
+    public void LoadSceneAsync(int buildIndex)
     {
         SceneManager.LoadSceneAsync(buildIndex);
     }
