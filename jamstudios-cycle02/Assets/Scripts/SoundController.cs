@@ -20,12 +20,14 @@ public class SoundController : MonoBehaviour {
     public void CreateNewSound(AudioClip sound, bool loopSound = false)
     {
         GameObject obj = new GameObject();
+        obj.transform.parent = transform;
         obj.AddComponent<AudioSource>();
         obj.GetComponent<AudioSource>().clip = sound;
         obj.GetComponent<AudioSource>().loop = loopSound;
+        obj.GetComponent<AudioSource>().Play();
 
         if (!loopSound)
-            DestroyObject(obj, sound.length + 2.0f);
+            Destroy(obj, sound.length);
     }
 
 }
