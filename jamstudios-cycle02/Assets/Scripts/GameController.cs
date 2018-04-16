@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
@@ -7,6 +8,7 @@ public class GameController : MonoBehaviour {
     [HideInInspector]
     public static GameController instance = null;
 
+    public GameObject menu;
     public AudioClip testSound;
 
     private bool isGamePaused;
@@ -19,12 +21,18 @@ public class GameController : MonoBehaviour {
             Destroy(this);
 	}
 
+    void Start ()
+    {
+        menu.SetActive(false);
+        isGamePaused = false;
+    }
+
 	// Update is called once per frame
 	void Update () {
         PlayerInput();
 	}
 
-    void PlayerInput()
+    private void PlayerInput()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -43,11 +51,42 @@ public class GameController : MonoBehaviour {
                 ChangeTimeState(1.0f);
                 isGamePaused = false;
             }
+
+            menu.SetActive(isGamePaused);
         }
     }
 
-    void ChangeTimeState(float newGameSpeed)
+    public void ChangeTimeState(float newGameSpeed)
     {
         Time.timeScale = newGameSpeed;
+    }
+
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
+    public void LoadScene(int buildIndex)
+    {
+        SceneManager.LoadScene(buildIndex);
+    }
+
+    public void LoadSceneAsync(string name)
+    {
+        SceneManager.LoadSceneAsync(name);
+    }
+
+    public void LoadSceneAAsync(int buildIndex)
+    {
+        SceneManager.LoadSceneAsync(buildIndex);
+    }
+
+    public void QuitGame()
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 }
