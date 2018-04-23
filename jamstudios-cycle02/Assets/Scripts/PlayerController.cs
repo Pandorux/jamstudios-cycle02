@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
     {
         #region Variables
 
+        public float attackDamage;
         public float attackSpeed;
         public float attackCooldown;
         public Animator weaponAnimator;
@@ -60,6 +61,15 @@ public class PlayerController : MonoBehaviour {
             {
                 combat.Attack();
             }
+        }
+    }
+
+    void OnTriggerEnter(Collider c)
+    {
+        if (c.tag == "Chicken")
+        {
+            Debug.Log("Chicken be hurt");
+            //c.GetComponent<ChickenController>().TakeDamage(combat.attackDamage);
         }
     }
 }

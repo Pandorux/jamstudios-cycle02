@@ -27,7 +27,6 @@ public class Wander : MonoBehaviour {
         Vector3 ranDir = Random.insideUnitSphere * moveRadius;
         NavMeshHit hit;
         NavMesh.SamplePosition(ranDir, out hit, moveRadius, NavMesh.AllAreas);
-        Debug.Log(hit.position);
         return hit.position;
     }
 
