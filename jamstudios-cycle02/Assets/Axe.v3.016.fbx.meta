@@ -1,21 +1,29 @@
 fileFormatVersion: 2
-guid: c8c159d4d5a00b34da47cb0c038e8abd
-timeCreated: 1524469572
+guid: c82c9797b2983a8489aa8e50b6a225a1
+timeCreated: 1524487901
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Head
+    100002: Camera
+    100004: Handle
+    100006: Head
+    100008: Lamp
     400000: //RootNode
-    400002: Head
+    400002: Camera
+    400004: Handle
+    400006: Head
+    400008: Lamp
+    2000000: Camera
     2100000: Axe
-    2300000: //RootNode
+    2300000: Handle
     2300002: Head
-    3300000: //RootNode
+    3300000: Handle
     3300002: Head
     4300000: Handle
     4300002: Head
+    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1

@@ -7,20 +7,22 @@ public class ChicoSpawner : MonoBehaviour {
     public float spawnRate;
     public GameObject chicken;
 
-    private bool spawnChicken;
-	
+    private float spawnTime;
+
+    void Start()
+    {
+        spawnTime += spawnRate;
+    }
+
 	// Update is called once per frame
 	void Update () {
-        if (((int)Time.time % spawnRate) == 0 && spawnChicken)
+
+        if (spawnTime <= Time.time)
         {
             Vector3 spawnLoc = new Vector3(PlayerController.player.transform.position.x, 1, PlayerController.player.transform.position.z);
             Instantiate(chicken, spawnLoc, Quaternion.identity);
-            spawnChicken = false;
+            spawnTime = Time.time + spawnRate;
         }
-        
-        if (((int)Time.time % spawnRate) != 0)
-        {
-            spawnChicken = true;
-        }
+       
 	}
 }
