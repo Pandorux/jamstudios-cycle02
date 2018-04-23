@@ -19,8 +19,10 @@ ModelImporter:
     2100000: Axe
     2300000: Handle
     2300002: Head
+    2300004: //RootNode
     3300000: Handle
     3300002: Head
+    3300004: //RootNode
     4300000: Handle
     4300002: Head
     10800000: Lamp
