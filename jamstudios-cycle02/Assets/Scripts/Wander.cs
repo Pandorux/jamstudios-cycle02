@@ -8,7 +8,7 @@ public class Wander : MonoBehaviour {
 
     [HideInInspector]
     public NavMeshAgent agent;
-
+    
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();

@@ -1,16 +1,4 @@
 sceneSetups:
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-- path: Assets/_Scenes/Game.unity
-=======
-- path: Assets/_Scenes/MainMenu.unity
->>>>>>> UI
-=======
-<<<<<<< Updated upstream
-- path: Assets/_Scenes/Game.unity
-=======
 - path: Assets/_Scenes/Test_Jared01.unity
->>>>>>> Stashed changes
->>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1
