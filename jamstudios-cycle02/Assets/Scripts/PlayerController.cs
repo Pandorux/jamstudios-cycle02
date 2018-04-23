@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour {
         if (c.tag == "Chicken")
         {
             Debug.Log("Chicken be hurt");
-            //c.GetComponent<ChickenController>().TakeDamage(combat.attackDamage);
+            c.GetComponent<ChickenController>().TakeDamage(combat.attackDamage);
         }
     }
 }
