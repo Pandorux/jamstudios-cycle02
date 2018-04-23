@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(Wander))]
-public class ChickenControoller : MonoBehaviour {
+public class ChickenController : MonoBehaviour {
 
     public float health;
     public float moveSpeed;
-    public Animator animator;
+    //public Animator animator;
     public bool isAlive;
 
 	// Use this for initialization
@@ -19,11 +19,20 @@ public class ChickenControoller : MonoBehaviour {
 
     public void TakeDamage(float dmg)
     {
+        Debug.Log("Chicken be hurt");
         health -= dmg;
+
+        if (health <= 0)
+            isAlive = false;
+
+        if (!isAlive)
+            Death();
     }
 
     public void Death()
     {
-        animator.Play("death");
+        Debug.Log("Chicken be dead");
+        //animator.Play("death");
+        GetComponent<NavMeshAgent>().speed = 0;
     }
 }
