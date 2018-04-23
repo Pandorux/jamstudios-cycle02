@@ -8,7 +8,7 @@ public class ChickenController : MonoBehaviour {
 
     public float health;
     public float moveSpeed;
-    //public Animator animator;
+    public Animator animator;
     public bool isAlive;
 
 	// Use this for initialization
@@ -32,7 +32,7 @@ public class ChickenController : MonoBehaviour {
     public void Death()
     {
         Debug.Log("Chicken be dead");
-        //animator.Play("death");
+        animator.Play("Armature|Death");
         GetComponent<NavMeshAgent>().speed = 0;
     }
 }
