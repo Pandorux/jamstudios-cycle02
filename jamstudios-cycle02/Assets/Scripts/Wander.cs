@@ -12,13 +12,14 @@ public class Wander : MonoBehaviour {
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.SetDestination(GetNewTargetLoc(10));
+        agent.SetDestination(GetNewTargetLoc(100));
     }
 
     void Update()
     {
         if(1 <= Vector3.Distance(agent.destination, transform.position)) {
             agent.SetDestination(GetNewTargetLoc(10));
+            //Debug.Log(agent.destination);
         }
         
     }
