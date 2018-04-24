@@ -19,7 +19,7 @@ public class ChickenController : MonoBehaviour {
 
     public void TakeDamage(float dmg)
     {
-        Debug.Log("Chicken be hurt");
+
         health -= dmg;
 
         if (health <= 0)
@@ -31,10 +31,9 @@ public class ChickenController : MonoBehaviour {
 
     public void Death()
     {
-        Debug.Log("Chicken be dead");
         animator.Play("Armature|Death");
-        GameController.chickensKilled++;
-        GameController.chickensAlive--;
+        GameController.instance.chickensKilled++;
+        GameController.instance.chickensAlive--;
         GetComponent<NavMeshAgent>().speed = 0;
     }
 }

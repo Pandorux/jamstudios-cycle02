@@ -9,17 +9,16 @@ public class GameController : MonoBehaviour
     [HideInInspector]
     public static GameController instance = null;
     [HideInInspector]
-    public static int chickensAlive = 0;
+    public int chickensAlive = 0;
     [HideInInspector]
-    public static int chickensKilled = 0;
+    public int chickensKilled = 0;
+    [HideInInspector]
+    public float timeSurvived = 0;
     [HideInInspector]
     public bool isGameRunning;
 
     [Range(0, 1000)]
     public int loseThreshold = 25;
-    public GameObject pauseMenu;
-    public GameObject gameOverMenu;
-
     private bool isGamePaused;
 
     // Use this for initialization
@@ -33,8 +32,6 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        pauseMenu.SetActive(false);
-        gameOverMenu.SetActive(false);
         isGamePaused = false;
         isGameRunning = true;
         Cursor.visible = false;
@@ -46,6 +43,7 @@ public class GameController : MonoBehaviour
     {
         PlayerInput();
         GameConditions();
+        timeSurvived = Time.time;
     }
 
     private void PlayerInput()
@@ -58,7 +56,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ChangePauseState();
-            pauseMenu.SetActive(isGamePaused);
+            UIController.instance.pauseMenu.SetActive(isGamePaused);
         }
     }
 
@@ -69,7 +67,8 @@ public class GameController : MonoBehaviour
             Time.timeScale = 0;
             isGameRunning = false;
             PlayerController.instance.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = false;
-            gameOverMenu.SetActive(true);        
+            UIController.instance.gameOverMenu.SetActive(true);
+            UIController.instance.GameOverScreen();
         }
     }
 
@@ -82,7 +81,7 @@ public class GameController : MonoBehaviour
     {
         if (!isGamePaused)
         {
-            pauseMenu.SetActive(true);
+            UIController.instance.pauseMenu.SetActive(true);
             ChangeTimeState(0.0f);
             isGamePaused = true;
             Cursor.visible = true;
@@ -90,7 +89,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            pauseMenu.SetActive(false);
+            UIController.instance.pauseMenu.SetActive(false);
             ChangeTimeState(1.0f);
             isGamePaused = false;
             Cursor.visible = false;
@@ -118,12 +117,17 @@ public class GameController : MonoBehaviour
         SceneManager.LoadSceneAsync(buildIndex);
     }
 
+    public int PlayerScore()
+    {
+        return (int)timeSurvived * chickensKilled;
+    }
+
     public void QuitGame()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit();
+        #endif
     }
 }
