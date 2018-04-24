@@ -33,6 +33,8 @@ public class GameController : MonoBehaviour
     {
         //menu.SetActive(false);
         isGamePaused = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
