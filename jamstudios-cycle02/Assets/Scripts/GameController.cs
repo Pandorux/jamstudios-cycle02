@@ -15,7 +15,8 @@ public class GameController : MonoBehaviour
 
     [Range(0, 100)]
     public int loseThreshold = 25;
-    public GameObject menu;
+    public GameObject pauseMenu;
+    public GameObject gameOverMenu;
 
     private bool isGamePaused;
 
@@ -30,10 +31,10 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        menu.SetActive(false);
+        pauseMenu.SetActive(false);
+        gameOverMenu.SetActive(false);
         isGamePaused = false;
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -53,7 +54,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ChangePauseState();
-            menu.SetActive(isGamePaused);
+            pauseMenu.SetActive(isGamePaused);
         }
     }
 
@@ -63,6 +64,7 @@ public class GameController : MonoBehaviour
         {
             Time.timeScale = 0;
             PlayerController.player.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = false;
+            gameOverMenu.SetActive(true);        
         }
     }
 
@@ -75,7 +77,7 @@ public class GameController : MonoBehaviour
     {
         if (!isGamePaused)
         {
-            menu.SetActive(true);
+            pauseMenu.SetActive(true);
             ChangeTimeState(0.0f);
             isGamePaused = true;
             Cursor.visible = true;
@@ -83,7 +85,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            menu.SetActive(false);
+            pauseMenu.SetActive(false);
             ChangeTimeState(1.0f);
             isGamePaused = false;
             Cursor.visible = false;
