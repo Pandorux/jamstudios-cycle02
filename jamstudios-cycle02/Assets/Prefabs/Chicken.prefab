@@ -188,10 +188,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4760198161260352}
   - component: {fileID: 136190016353263394}
-  - component: {fileID: 114241298901417456}
-  - component: {fileID: 114199665342792918}
-  - component: {fileID: 195354714998355420}
   - component: {fileID: 54144566641448006}
+  - component: {fileID: 195515743408313428}
+  - component: {fileID: 114537050194469820}
+  - component: {fileID: 114319676531176542}
   m_Layer: 8
   m_Name: Chicken
   m_TagString: Chicken
@@ -699,7 +699,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1333973747552856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.55, y: 0, z: 0}
+  m_LocalPosition: {x: -8.683545, y: 6.031416e-17, z: -16.297848}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4908003058684478}
@@ -765,7 +765,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1976261403602244}
   m_LocalRotation: {x: -0.7071068, y: -2.8036837e-11, z: 1.4963608e-11, w: 0.7071067}
-  m_LocalPosition: {x: 1.14473764e-10, y: 2.7136164, z: 0.5716393}
+  m_LocalPosition: {x: 1.24, y: 1.92, z: 0.5716393}
   m_LocalScale: {x: 11.875911, y: 28.870863, z: 28.87086}
   m_Children: []
   m_Father: {fileID: 4908003058684478}
@@ -925,19 +925,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114199665342792918
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1333973747552856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 038ccc3dd4d469b4abc80be434bbf450, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 0}
---- !u!114 &114241298901417456
+--- !u!114 &114319676531176542
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -952,6 +940,18 @@ MonoBehaviour:
   moveSpeed: 5
   animator: {fileID: 95257144662779366}
   isAlive: 0
+--- !u!114 &114537050194469820
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1333973747552856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038ccc3dd4d469b4abc80be434bbf450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 0}
 --- !u!136 &136190016353263394
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -961,8 +961,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.36
-  m_Height: 4.15
+  m_Radius: 1.15
+  m_Height: 2.65
   m_Direction: 1
   m_Center: {x: 0, y: 1.33, z: 0}
 --- !u!137 &137119487659640898
@@ -1372,7 +1372,7 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0034836964, y: -0.014653927, z: 0.0064816745}
     m_Extent: {x: 0.0011997907, y: 0.002961705, z: 0.0032455337}
   m_DirtyAABB: 0
---- !u!195 &195354714998355420
+--- !u!195 &195515743408313428
 NavMeshAgent:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1380,16 +1380,16 @@ NavMeshAgent:
   m_GameObject: {fileID: 1333973747552856}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.75
+  m_Radius: 0.95
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2.5
+  m_Height: 2.56
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

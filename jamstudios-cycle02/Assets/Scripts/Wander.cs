@@ -9,11 +9,11 @@ public class Wander : MonoBehaviour {
 
     [HideInInspector]
     public NavMeshAgent agent;
-    
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.SetDestination(GetNewTargetLoc(100));
+        //agent.SetDestination(GetNewTargetLoc(100));
     }
 
     void Update()
@@ -24,7 +24,6 @@ public class Wander : MonoBehaviour {
 
         if(1 >= Vector3.Distance(agent.destination, transform.position)) {
             agent.SetDestination(GetNewTargetLoc(100));
-            Debug.DrawRay(agent.destination, Vector3.up);
             //Debug.Log(agent.destination);
         }
         
