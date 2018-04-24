@@ -26,7 +26,7 @@ public class ChicoSpawner : MonoBehaviour {
             {
                 Vector3 spawnLoc = new Vector3(PlayerController.instance.transform.position.x, 1, PlayerController.instance.transform.position.z);
                 Instantiate(chicken, spawnLoc, Quaternion.identity);
-                GameController.chickensAlive++;
+                GameController.instance.chickensAlive++;
                 chickensSpawned++;
                 spawnTime = Time.time + spawnRate;
 
