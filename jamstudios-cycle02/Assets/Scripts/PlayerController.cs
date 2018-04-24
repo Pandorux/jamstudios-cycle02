@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if(combat.CanAttack()) 
+            if(combat.CanAttack() && Time.timeScale != 0) 
             {
                 combat.Attack();
             }

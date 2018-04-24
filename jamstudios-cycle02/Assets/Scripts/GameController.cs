@@ -16,7 +16,6 @@ public class GameController : MonoBehaviour
     [Range(0, 100)]
     public int loseThreshold = 25;
     public GameObject menu;
-    public AudioClip testSound;
 
     private bool isGamePaused;
 
@@ -31,7 +30,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        //menu.SetActive(false);
+        menu.SetActive(false);
         isGamePaused = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -46,10 +45,10 @@ public class GameController : MonoBehaviour
 
     private void PlayerInput()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            SoundController.instance.CreateNewSound(testSound);
-        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    SoundController.instance.CreateNewSound(testSound);
+        //}
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -73,21 +72,24 @@ public class GameController : MonoBehaviour
     }
 
     public void ChangePauseState()
-{
-    if (!isGamePaused)
     {
-        
-        ChangeTimeState(0.0f);
-        isGamePaused = true;
-        PlayerController.player.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = false;
+        if (!isGamePaused)
+        {
+            menu.SetActive(true);
+            ChangeTimeState(0.0f);
+            isGamePaused = true;
+            Cursor.visible = true;
+            PlayerController.player.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = false;
+        }
+        else
+        {
+            menu.SetActive(false);
+            ChangeTimeState(1.0f);
+            isGamePaused = false;
+            Cursor.visible = false;
+            PlayerController.player.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = true;
+        }
     }
-    else
-    {
-        ChangeTimeState(1.0f);
-        isGamePaused = false;
-        PlayerController.player.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = true;
-    }
-}
 
     public void LoadScene(string name)
     {
