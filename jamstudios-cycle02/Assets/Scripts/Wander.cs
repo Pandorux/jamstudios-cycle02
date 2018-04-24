@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class Wander : MonoBehaviour {
@@ -17,17 +18,22 @@ public class Wander : MonoBehaviour {
 
     void Update()
     {
-        if(1 <= Vector3.Distance(agent.destination, transform.position)) {
-            agent.SetDestination(GetNewTargetLoc(10));
+
+        //Debug.Log("Dist: " + Vector3.Distance(agent.destination, transform.position) +
+        //    "\nDest: " + agent.destination + "\t, Cur: " + transform.position);
+
+        if(1 >= Vector3.Distance(agent.destination, transform.position)) {
+            agent.SetDestination(GetNewTargetLoc(100));
+            Debug.DrawRay(agent.destination, Vector3.up);
             //Debug.Log(agent.destination);
         }
         
     }
 
     Vector3 GetNewTargetLoc(float moveRadius) {
-        Vector3 ranDir = Random.insideUnitSphere * moveRadius;
+        Vector3 ranPoint = transform.position + Random.insideUnitSphere * moveRadius;
         NavMeshHit hit;
-        NavMesh.SamplePosition(ranDir, out hit, moveRadius, NavMesh.AllAreas);
+        NavMesh.SamplePosition(ranPoint, out hit, moveRadius, NavMesh.AllAreas);
         return hit.position;
     }
 

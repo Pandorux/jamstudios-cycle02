@@ -33,6 +33,8 @@ public class ChickenController : MonoBehaviour {
     {
         Debug.Log("Chicken be dead");
         animator.Play("Armature|Death");
+        GameController.chickensKilled++;
+        GameController.chickensAlive--;
         GetComponent<NavMeshAgent>().speed = 0;
     }
 }

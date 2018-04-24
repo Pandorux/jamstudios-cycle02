@@ -66,6 +66,8 @@ public class PlayerController : MonoBehaviour {
 
     void OnTriggerEnter(Collider c)
     {
+        Debug.Log("Hit something");
+
         if (c.tag == "Chicken")
         {
             Debug.Log("Chicken be hurt");
