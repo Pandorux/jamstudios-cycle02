@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    public static PlayerController player = null;
+    public static PlayerController instance = null;
 
     #region Subclasses
 
@@ -47,8 +47,8 @@ public class PlayerController : MonoBehaviour {
 
 	void Awake () 
     {
-        if (player == null)
-            player = this;
+        if (instance == null)
+            instance = this;
         else
             Destroy(this);
 	}
@@ -61,17 +61,6 @@ public class PlayerController : MonoBehaviour {
             {
                 combat.Attack();
             }
-        }
-    }
-
-    void OnTriggerEnter(Collider c)
-    {
-        Debug.Log("Hit something");
-
-        if (c.tag == "Chicken")
-        {
-            Debug.Log("Chicken be hurt");
-            c.GetComponent<ChickenController>().TakeDamage(combat.attackDamage);
         }
     }
 }

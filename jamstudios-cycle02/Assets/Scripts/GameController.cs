@@ -12,8 +12,10 @@ public class GameController : MonoBehaviour
     public static int chickensAlive = 0;
     [HideInInspector]
     public static int chickensKilled = 0;
+    [HideInInspector]
+    public bool isGameRunning;
 
-    [Range(0, 100)]
+    [Range(0, 1000)]
     public int loseThreshold = 25;
     public GameObject pauseMenu;
     public GameObject gameOverMenu;
@@ -34,7 +36,9 @@ public class GameController : MonoBehaviour
         pauseMenu.SetActive(false);
         gameOverMenu.SetActive(false);
         isGamePaused = false;
+        isGameRunning = true;
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     // Update is called once per frame
@@ -63,7 +67,8 @@ public class GameController : MonoBehaviour
         if (chickensAlive >= loseThreshold)
         {
             Time.timeScale = 0;
-            PlayerController.player.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = false;
+            isGameRunning = false;
+            PlayerController.instance.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = false;
             gameOverMenu.SetActive(true);        
         }
     }
@@ -81,7 +86,7 @@ public class GameController : MonoBehaviour
             ChangeTimeState(0.0f);
             isGamePaused = true;
             Cursor.visible = true;
-            PlayerController.player.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = false;
+            PlayerController.instance.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = false;
         }
         else
         {
@@ -89,7 +94,7 @@ public class GameController : MonoBehaviour
             ChangeTimeState(1.0f);
             isGamePaused = false;
             Cursor.visible = false;
-            PlayerController.player.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = true;
+            PlayerController.instance.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = true;
         }
     }
 
