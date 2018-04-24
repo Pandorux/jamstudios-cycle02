@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4846891720739094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper Leg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4049229243751964}
   - component: {fileID: 137711035774498150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4390076015413424}
   - component: {fileID: 137531212921998368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Beak.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4319622813376250}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Middle Toe.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4754724392616820}
   - component: {fileID: 137351511819330390}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wattle.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4136650937358086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower Leg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4692995427099366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4243570619956798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Upper Leg.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4989129687389650}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Middle Toe.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4956313816774336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4839280797442502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back Toe.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 114199665342792918}
   - component: {fileID: 195354714998355420}
   - component: {fileID: 54144566641448006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chicken
   m_TagString: Chicken
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4695436824884036}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4540510830280706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wing.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4908003058684478}
   - component: {fileID: 95257144662779366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mr Cluckington.v7.073 (animated)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4043208637192324}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4284558792195798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back Toe.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4819343075901036}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back Toe.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4286114285514432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wing.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4331898042868520}
   - component: {fileID: 137405073677100694}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wing.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4432919644547256}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Middle Toe.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4496383686278500}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lower Leg.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4937387977899074}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wing.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4988291342180348}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back Toe.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4775020579981594}
   - component: {fileID: 137663623124214864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eye.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4823395549418182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Middle Toe.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4784127319220934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wing.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +435,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4989147209548716}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4646860605180644}
   - component: {fileID: 137119487659640898}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eyebrow.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4830894785902644}
   - component: {fileID: 137870962044286240}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Comb.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -961,8 +961,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.99
-  m_Height: 2.6
+  m_Radius: 1.36
+  m_Height: 4.15
   m_Direction: 1
   m_Center: {x: 0, y: 1.33, z: 0}
 --- !u!137 &137119487659640898

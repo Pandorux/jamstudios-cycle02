@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 4428558070761860}
   - component: {fileID: 95229248242210742}
   - component: {fileID: 54879498143600604}
+  - component: {fileID: 65145891686013268}
+  - component: {fileID: 65667783930278088}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -137,7 +139,7 @@ Transform:
   m_GameObject: {fileID: 1134569012122868}
   m_LocalRotation: {x: -0, y: -0, z: -0.35406205, w: 0.93522197}
   m_LocalPosition: {x: 0.2199993, y: -2.15, z: 1.54}
-  m_LocalScale: {x: 2.23, y: 2.46, z: 1}
+  m_LocalScale: {x: 2.48, y: 2.82, z: 1.53}
   m_Children:
   - {fileID: 4504563763974086}
   m_Father: {fileID: 4373820279615598}
@@ -317,7 +319,31 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
+--- !u!65 &65145891686013268
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134569012122868}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.51, z: 1.9}
+  m_Center: {x: 0, y: 1.89, z: 0.28}
+--- !u!65 &65667783930278088
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134569012122868}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.84, z: 1}
+  m_Center: {x: 0, y: 0.79, z: 0}
 --- !u!81 &81376349932811278
 AudioListener:
   m_ObjectHideFlags: 1
@@ -433,8 +459,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633d720728faaa944a1a779b306b1a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 0.1
+  spawnRate: 3
   chicken: {fileID: 1333973747552856, guid: 626c7b32ed6d3c747b18bb30131c2008, type: 2}
+  spawnRateDecrease: 0.15
 --- !u!114 &114204586941379712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -536,6 +563,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  cameraActive: 1
 --- !u!114 &114691504182330470
 MonoBehaviour:
   m_ObjectHideFlags: 1

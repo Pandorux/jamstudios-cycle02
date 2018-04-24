@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        menu.SetActive(false);
+        //menu.SetActive(false);
         isGamePaused = false;
     }
 

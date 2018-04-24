@@ -19,8 +19,8 @@ public class Wander : MonoBehaviour {
     void Update()
     {
 
-        Debug.Log("Dist: " + Vector3.Distance(agent.destination, transform.position) +
-            "\nDest: " + agent.destination + "\t, Cur: " + transform.position);
+        //Debug.Log("Dist: " + Vector3.Distance(agent.destination, transform.position) +
+        //    "\nDest: " + agent.destination + "\t, Cur: " + transform.position);
 
         if(1 >= Vector3.Distance(agent.destination, transform.position)) {
             agent.SetDestination(GetNewTargetLoc(100));
@@ -37,10 +37,4 @@ public class Wander : MonoBehaviour {
         return hit.position;
     }
 
-    Vector3 GetNewTargetLoc()
-    {
-        NavMeshTriangulation tri = NavMesh.CalculateTriangulation();
-        int t = Random.Range(0, tri.vertices.Length - 3);
-        return tri.vertices[t];
-    }
 }

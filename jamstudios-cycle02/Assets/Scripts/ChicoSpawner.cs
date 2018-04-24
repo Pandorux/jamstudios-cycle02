@@ -30,7 +30,7 @@ public class ChicoSpawner : MonoBehaviour {
 
             if ((chickensSpawned % 5) == 0 && spawnTime >= spawnRateDecrease)
             {
-                Debug.Log("Chickens: " + chickensSpawned + "\n Time: " + Time.time);
+                //Debug.Log("Chickens: " + chickensSpawned + "\n Time: " + Time.time);
                 spawnRate -= spawnRateDecrease;
             }
         }
