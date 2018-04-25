@@ -10,6 +10,7 @@ public class ChickenController : MonoBehaviour {
     public float moveSpeed;
     public Animator animator;
     public bool isAlive;
+    public AudioSource deathSound;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +33,7 @@ public class ChickenController : MonoBehaviour {
     public void Death()
     {
         animator.Play("Armature|Death");
+        deathSound.Play();
         GameController.instance.chickensKilled++;
         GameController.instance.chickensAlive--;
         GetComponent<NavMeshAgent>().speed = 0;
