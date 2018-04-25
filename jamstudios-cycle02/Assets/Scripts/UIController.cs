@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor.SceneManagement;
 using TMPro;
 
 public class UIController : MonoBehaviour {
@@ -49,4 +50,5 @@ public class UIController : MonoBehaviour {
         goChickensKilledText.text = GameController.instance.chickensKilled.ToString();
         finalScoreText.text = GameController.instance.PlayerScore().ToString();
     }
+
 }
