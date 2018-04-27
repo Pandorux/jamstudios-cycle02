@@ -11,11 +11,13 @@ public class UIController : MonoBehaviour {
 
     public GameObject pauseMenu;
     public GameObject gameOverMenu;
+    public GameObject hud;
     public TextMeshProUGUI timeSurvivedText;
     public TextMeshProUGUI chickensKilledText;
     public TextMeshProUGUI goTimeSurvivedText;
     public TextMeshProUGUI goChickensKilledText;
     public TextMeshProUGUI finalScoreText;
+
 
     void Awake ()
     {
@@ -31,16 +33,20 @@ public class UIController : MonoBehaviour {
         gameOverMenu.SetActive(false);
 	}
 
+
     // TODO: Update the Time Survived UI
-    void UpdateTimer()
+    public void UpdateTimer()
     {
-        
+
+        timeSurvivedText.text = ((int)GameController.instance.timeSurvived).ToString();
+
     }
 
     // TODO: Update the Chickens Killed UI
-    void UpdateChickensKilled()
+    public void UpdateChickensKilled()
     {
 
+        chickensKilledText.text = GameController.instance.chickensKilled.ToString();
     }
 
     public void GameOverScreen() 

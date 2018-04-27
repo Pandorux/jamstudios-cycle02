@@ -44,6 +44,8 @@ public class GameController : MonoBehaviour
         PlayerInput();
         GameConditions();
         timeSurvived = Time.time;
+        UIController.instance.UpdateTimer();
+        UIController.instance.UpdateChickensKilled();
     }
 
     private void PlayerInput()
@@ -68,6 +70,7 @@ public class GameController : MonoBehaviour
             isGameRunning = false;
             PlayerController.instance.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = false;
             UIController.instance.gameOverMenu.SetActive(true);
+            UIController.instance.hud.SetActive(false);
             UIController.instance.GameOverScreen();
         }
     }
@@ -82,6 +85,7 @@ public class GameController : MonoBehaviour
         if (!isGamePaused)
         {
             UIController.instance.pauseMenu.SetActive(true);
+            UIController.instance.hud.SetActive(false);
             ChangeTimeState(0.0f);
             isGamePaused = true;
             Cursor.visible = true;
@@ -90,6 +94,7 @@ public class GameController : MonoBehaviour
         else
         {
             UIController.instance.pauseMenu.SetActive(false);
+            UIController.instance.hud.SetActive(true);
             ChangeTimeState(1.0f);
             isGamePaused = false;
             Cursor.visible = false;
