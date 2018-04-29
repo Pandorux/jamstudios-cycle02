@@ -32,6 +32,8 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
+        PlayerController.instance.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = true;
         isGamePaused = false;
         isGameRunning = true;
         Cursor.visible = false;
@@ -43,7 +45,7 @@ public class GameController : MonoBehaviour
     {
         PlayerInput();
         GameConditions();
-        timeSurvived = Time.time;
+        timeSurvived = Time.timeSinceLevelLoad;
         UIController.instance.UpdateTimer();
         UIController.instance.UpdateChickensKilled();
         UIController.instance.ChangeHUD();
@@ -74,6 +76,7 @@ public class GameController : MonoBehaviour
             UIController.instance.gameOverMenu.SetActive(true);
             UIController.instance.hud.SetActive(false);
             UIController.instance.GameOverScreen();
+            Cursor.visible = true;
         }
     }
 
