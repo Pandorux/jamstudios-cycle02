@@ -18,6 +18,9 @@ public class UIController : MonoBehaviour {
     public TextMeshProUGUI goChickensKilledText;
     public TextMeshProUGUI finalScoreText;
 
+    public GameObject rage;
+    public GameObject irritated;
+    public GameObject scared;
 
     void Awake ()
     {
@@ -55,6 +58,29 @@ public class UIController : MonoBehaviour {
         goTimeSurvivedText.text = ((int)GameController.instance.timeSurvived).ToString();
         goChickensKilledText.text = GameController.instance.chickensKilled.ToString();
         finalScoreText.text = GameController.instance.PlayerScore().ToString();
+    }
+
+    public void ChangeHUD()
+    {
+        if (GameController.instance.chickensAlive >= 0 && GameController.instance.chickensAlive < (0.33 * GameController.instance.loseThreshold))
+        {
+            scared.SetActive(true);
+            irritated.SetActive(false);
+            rage.SetActive(false);
+        }
+        else if (GameController.instance.chickensAlive >= (0.33 * GameController.instance.loseThreshold) && GameController.instance.chickensAlive < (0.66 * GameController.instance.loseThreshold))
+        {
+            scared.SetActive(false);
+            irritated.SetActive(true);
+            rage.SetActive(false);
+        }
+        else
+        { 
+            scared.SetActive(false);
+            irritated.SetActive(false);
+            rage.SetActive(true);
+
+        }
     }
 
 }

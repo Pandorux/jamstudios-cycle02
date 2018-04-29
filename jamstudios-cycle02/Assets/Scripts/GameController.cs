@@ -46,6 +46,8 @@ public class GameController : MonoBehaviour
         timeSurvived = Time.time;
         UIController.instance.UpdateTimer();
         UIController.instance.UpdateChickensKilled();
+        UIController.instance.ChangeHUD();
+
     }
 
     private void PlayerInput()
