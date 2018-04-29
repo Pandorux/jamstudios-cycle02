@@ -1,10 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour {
-    
+public class MainMenu : SaveableData {
+
+    public Slider soundVol;
+    public Slider musicVol;
+
+    void Start()
+    {
+        soundVol.value = GetSoundVolume();
+        musicVol.value = GetSoundVolume();
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
@@ -16,6 +26,14 @@ public class MainMenu : MonoBehaviour {
         Application.Quit();
     }
 
+    public void SaveSoundVolume()
+    {
+        SetSoundVolume(soundVol.value);
+    }
 
+    public void SaveMusicVolume()
+    {
+        SetSoundVolume(soundVol.value);
+    }
 
 }
