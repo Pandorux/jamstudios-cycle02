@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 4428558070761860}
   - component: {fileID: 95229248242210742}
   - component: {fileID: 54879498143600604}
-  - component: {fileID: 65145891686013268}
   - component: {fileID: 65667783930278088}
+  - component: {fileID: 114110246545328814}
   m_Layer: 10
   m_Name: Weapon
   m_TagString: Untagged
@@ -312,26 +312,14 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1134569012122868}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.02
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!65 &65145891686013268
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1134569012122868}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.51, z: 1.9}
-  m_Center: {x: 0, y: 1.89, z: 0.28}
 --- !u!65 &65667783930278088
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -448,6 +436,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114110246545328814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134569012122868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029de55e1817423478c674850d37656f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114204279290418910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -459,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633d720728faaa944a1a779b306b1a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 3
+  spawnRate: 1
   chicken: {fileID: 1333973747552856, guid: 626c7b32ed6d3c747b18bb30131c2008, type: 2}
   spawnRateDecrease: 0.15
 --- !u!114 &114204586941379712
@@ -474,16 +473,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsWalking: 0
-  m_WalkSpeed: 17.5
-  m_RunSpeed: 25
-  m_RunstepLenghten: 0.7
+  m_WalkSpeed: 30
+  m_RunSpeed: 0
+  m_RunstepLenghten: 1
   m_JumpSpeed: 10
-  m_StickToGroundForce: 10
+  m_StickToGroundForce: 2
   m_GravityMultiplier: 2
   m_MouseLook:
-    XSensitivity: 2
-    YSensitivity: 2
-    clampVerticalRotation: 1
+    XSensitivity: 3
+    YSensitivity: 3
+    clampVerticalRotation: 0
     MinimumX: -90
     MaximumX: 90
     smooth: 0
@@ -515,7 +514,7 @@ MonoBehaviour:
       m_RotationOrder: 4
   m_UseHeadBob: 1
   m_HeadBob:
-    HorizontalBobRange: 0.1
+    HorizontalBobRange: 5
     VerticalBobRange: 0.1
     Bobcurve:
       serializedVersion: 2
@@ -556,8 +555,8 @@ MonoBehaviour:
     VerticaltoHorizontalRatio: 2
   m_JumpBob:
     BobDuration: 0.2
-    BobAmount: 0.1
-  m_StepInterval: 5
+    BobAmount: 1
+  m_StepInterval: 10
   m_FootstepSounds:
   - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
@@ -591,9 +590,9 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 17.8
-  m_Radius: 0.2
+  m_Radius: 3
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}

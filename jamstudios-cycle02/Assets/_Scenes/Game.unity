@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43679777, g: 0.4844234, b: 0.5646792, a: 1}
+  m_IndirectSpecularColor: {r: 0.43679714, g: 0.48442262, b: 0.5646783, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2379,22 +2379,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!1 &631932686 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1134569012122868, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
-    type: 2}
-  m_PrefabInternal: {fileID: 2074210631}
---- !u!114 &631932692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 631932686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 029de55e1817423478c674850d37656f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &673095202
 GameObject:
   m_ObjectHideFlags: 0
@@ -6595,90 +6579,7 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1134569012122868, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7, type: 2}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1540612746882422, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7, type: 2}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1669796752786020, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7, type: 2}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204279290418910, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
-        type: 2}
-      propertyPath: spawnRate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65145891686013268, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204279290418910, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 65667783930278088, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 20619805933438262, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
-        type: 2}
-      propertyPath: near clip plane
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204586941379712, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
-        type: 2}
-      propertyPath: m_HeadBob.HorizontalBobRange
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204586941379712, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
-        type: 2}
-      propertyPath: m_MouseLook.XSensitivity
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204586941379712, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
-        type: 2}
-      propertyPath: m_MouseLook.YSensitivity
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204586941379712, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
-        type: 2}
-      propertyPath: m_HeadBob.VerticaltoHorizontalRatio
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204586941379712, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
-        type: 2}
-      propertyPath: m_RunstepLenghten
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204586941379712, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
-        type: 2}
-      propertyPath: m_StepInterval
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 143287342703697024, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
-        type: 2}
-      propertyPath: m_StepOffset
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54879498143600604, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
-        type: 2}
-      propertyPath: m_Mass
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 54879498143600604, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
-        type: 2}
-      propertyPath: m_AngularDrag
-      value: 0.02
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 65145891686013268, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2077362976
