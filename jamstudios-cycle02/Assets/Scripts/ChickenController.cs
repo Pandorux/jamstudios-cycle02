@@ -6,16 +6,23 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Wander))]
 public class ChickenController : MonoBehaviour {
 
+
+
     public float health;
     public float moveSpeed;
     public Animator animator;
     public bool isAlive;
-    public AudioSource deathSound;
+    public AudioSource deathSource;
+    public AudioClip[] deathSounds;
+    [Range(0, 5)]
+    public float deathDelay = 2.0f;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         GetComponent<NavMeshAgent>().speed = moveSpeed;
         isAlive = true;
+
+        deathSource.clip = deathSounds[Random.Range(0, deathSounds.Length)];
 	}
 
     public void TakeDamage(float dmg)
@@ -33,9 +40,16 @@ public class ChickenController : MonoBehaviour {
     public void Death()
     {
         animator.Play("Armature|Death");
-        deathSound.Play();
+        deathSource.Play();
         GameController.instance.chickensKilled++;
         GameController.instance.chickensAlive--;
         GetComponent<NavMeshAgent>().speed = 0;
+        StartCoroutine(DestroyChicken(deathDelay));
+    }
+
+    private IEnumerator DestroyChicken(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
     }
 }

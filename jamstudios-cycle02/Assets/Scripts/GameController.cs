@@ -77,6 +77,7 @@ public class GameController : MonoBehaviour
             UIController.instance.hud.SetActive(false);
             UIController.instance.GameOverScreen();
             Cursor.visible = true;
+            SoundController.instance.GetComponent<AmbientAudio>().StopAudio();
         }
     }
 

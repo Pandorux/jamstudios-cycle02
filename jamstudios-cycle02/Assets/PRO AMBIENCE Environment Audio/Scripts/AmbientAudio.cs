@@ -15,9 +15,11 @@ public class AmbientAudio : MonoBehaviour {
 	public bool randomiseStartPosition=false;
 	[Tooltip("The audio will be faded in when started and out when stopped")]
 	public bool fadeAudio;
-	[Tooltip("The amount of time, in seconds, for the audio to fade in or out")]
-	public float fadeTime=3;
-	[Tooltip("If set, this sound will play when the ambience is started")]
+	[Tooltip("The amount of time, in seconds, for the audio to fade in")]
+	public float fadeInTime=3;
+    [Tooltip("The amount of time, in seconds, for the audio to fade out")]
+    public float fadeOutTime = 3;
+    [Tooltip("If set, this sound will play when the ambience is started")]
 	public AudioClip startSound;
 	[Tooltip("If set, this sound will play when the ambience is stopped")]
 	public AudioClip endSound;
@@ -130,8 +132,8 @@ public class AmbientAudio : MonoBehaviour {
 		while(loopAudioSource.volume < defaultLoopVolume)
 		{
 
-			loopAudioSource.volume += defaultLoopVolume * (Time.deltaTime / fadeTime);
-			soundAudioSource.volume += defaultSoundVolume * (Time.deltaTime / fadeTime);
+			loopAudioSource.volume += defaultLoopVolume * (Time.deltaTime / fadeInTime);
+			soundAudioSource.volume += defaultSoundVolume * (Time.deltaTime / fadeInTime);
 			yield return null;
 		}
 	}
@@ -141,8 +143,8 @@ public class AmbientAudio : MonoBehaviour {
 		while(loopAudioSource.volume > 0)
 			{
 				
-				loopAudioSource.volume -= defaultLoopVolume * (Time.deltaTime / fadeTime);
-				soundAudioSource.volume -= defaultSoundVolume * (Time.deltaTime / fadeTime);
+				loopAudioSource.volume -= defaultLoopVolume * (Time.unscaledDeltaTime / fadeOutTime);
+				soundAudioSource.volume -= defaultSoundVolume * (Time.unscaledDeltaTime / fadeOutTime);
 				yield return null;
 			}
 		loopAudioSource.Stop();

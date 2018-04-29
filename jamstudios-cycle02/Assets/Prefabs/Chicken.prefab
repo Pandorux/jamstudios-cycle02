@@ -919,7 +919,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a0f8be3b3022cf046b809d2b0143670a, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1021,7 +1021,12 @@ MonoBehaviour:
   moveSpeed: 5
   animator: {fileID: 95257144662779366}
   isAlive: 0
-  deathSound: {fileID: 82132893623640172}
+  deathSource: {fileID: 82132893623640172}
+  deathSounds:
+  - {fileID: 8300000, guid: a0f8be3b3022cf046b809d2b0143670a, type: 3}
+  - {fileID: 8300000, guid: 4877d9c633794624cab04be4b6d9a130, type: 3}
+  - {fileID: 8300000, guid: c5a123189fc16434f82cdeaf5d806d3f, type: 3}
+  deathDelay: 2
 --- !u!114 &114537050194469820
 MonoBehaviour:
   m_ObjectHideFlags: 1

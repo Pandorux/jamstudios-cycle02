@@ -53,8 +53,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
   gameOverMenu: {fileID: 0}
+  hud: {fileID: 0}
   timeSurvivedText: {fileID: 0}
   chickensKilledText: {fileID: 0}
   goTimeSurvivedText: {fileID: 0}
   goChickensKilledText: {fileID: 0}
   finalScoreText: {fileID: 0}
+  rage: {fileID: 0}
+  irritated: {fileID: 0}
+  scared: {fileID: 0}
