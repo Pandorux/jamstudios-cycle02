@@ -7,6 +7,7 @@ public class ChicoSpawner : MonoBehaviour {
     public float spawnRate;
     public GameObject chicken;
     public float spawnRateDecrease = 0.15f;
+    public float minSpawnRate;
 
     private float spawnTime;
     private int chickensSpawned;
@@ -30,10 +31,11 @@ public class ChicoSpawner : MonoBehaviour {
                 chickensSpawned++;
                 spawnTime = Time.time + spawnRate;
 
-                if ((chickensSpawned % 5) == 0 && spawnTime > spawnRateDecrease)
+                if ((chickensSpawned % 5) == 0)
                 {
                     //Debug.Log("Chickens: " + chickensSpawned + "\n Time: " + Time.time);
                     spawnRate -= spawnRateDecrease;
+                    spawnRate = spawnRate > minSpawnRate ? spawnRate : minSpawnRate;
                 }
             }
         }

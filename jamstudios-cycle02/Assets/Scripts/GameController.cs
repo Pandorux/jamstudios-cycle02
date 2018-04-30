@@ -62,7 +62,6 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ChangePauseState();
-            UIController.instance.pauseMenu.SetActive(isGamePaused);
         }
     }
 
@@ -88,21 +87,22 @@ public class GameController : MonoBehaviour
 
     public void ChangePauseState()
     {
-        if (!isGamePaused)
+        
+        if (isGamePaused == false)
         {
-            UIController.instance.pauseMenu.SetActive(true);
+            isGamePaused = true;
+            UIController.instance.pauseMenu.SetActive(isGamePaused);
             UIController.instance.hud.SetActive(false);
             ChangeTimeState(0.0f);
-            isGamePaused = true;
             Cursor.visible = true;
             PlayerController.instance.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = false;
         }
         else
         {
-            UIController.instance.pauseMenu.SetActive(false);
+            isGamePaused = false;
+            UIController.instance.pauseMenu.SetActive(isGamePaused);
             UIController.instance.hud.SetActive(true);
             ChangeTimeState(1.0f);
-            isGamePaused = false;
             Cursor.visible = false;
             PlayerController.instance.gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().cameraActive = true;
         }
