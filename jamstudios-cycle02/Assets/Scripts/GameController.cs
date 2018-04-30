@@ -87,11 +87,11 @@ public class GameController : MonoBehaviour
 
     public void ChangePauseState()
     {
-        
-        if (isGamePaused == false)
+        isGamePaused = !isGamePaused;
+
+        if (isGamePaused == true)
         {
-            isGamePaused = true;
-            UIController.instance.pauseMenu.SetActive(isGamePaused);
+            UIController.instance.pauseMenu.SetActive(true);
             UIController.instance.hud.SetActive(false);
             ChangeTimeState(0.0f);
             Cursor.visible = true;
@@ -99,8 +99,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            isGamePaused = false;
-            UIController.instance.pauseMenu.SetActive(isGamePaused);
+            UIController.instance.pauseMenu.SetActive(false);
             UIController.instance.hud.SetActive(true);
             ChangeTimeState(1.0f);
             Cursor.visible = false;

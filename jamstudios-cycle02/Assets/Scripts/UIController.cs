@@ -40,9 +40,7 @@ public class UIController : MonoBehaviour {
     // TODO: Update the Time Survived UI
     public void UpdateTimer()
     {
-
         timeSurvivedText.text = ((int)GameController.instance.timeSurvived).ToString();
-
     }
 
     // TODO: Update the Chickens Killed UI
