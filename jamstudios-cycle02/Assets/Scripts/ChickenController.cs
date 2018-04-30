@@ -11,7 +11,7 @@ public class ChickenController : MonoBehaviour {
     public float health;
     public float moveSpeed;
     public Animator animator;
-    public bool isAlive;
+    public bool hasDied;
     public AudioSource deathSource;
     public AudioClip[] deathSounds;
     [Range(0, 5)]
@@ -20,7 +20,7 @@ public class ChickenController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         GetComponent<NavMeshAgent>().speed = moveSpeed;
-        isAlive = true;
+        hasDied = false;
 
         deathSource.clip = deathSounds[Random.Range(0, deathSounds.Length)];
         GetComponent<AudioSource>().volume *= SoundController.instance.ReturnSoundVolume();
@@ -28,18 +28,15 @@ public class ChickenController : MonoBehaviour {
 
     public void TakeDamage(float dmg)
     {
-
         health -= dmg;
 
-        if (health <= 0)
-            isAlive = false;
-
-        if (!isAlive)
+        if (hasDied == false && health <= 0)
             Death();
     }
 
     public void Death()
     {
+        hasDied = true;
         animator.Play("Armature|Death");
         deathSource.Play();
         GameController.instance.chickensKilled++;
