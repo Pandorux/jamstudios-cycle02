@@ -23,7 +23,8 @@ public class ChickenController : MonoBehaviour {
         isAlive = true;
 
         deathSource.clip = deathSounds[Random.Range(0, deathSounds.Length)];
-	}
+        GetComponent<AudioSource>().volume *= SoundController.instance.ReturnSoundVolume();
+    }
 
     public void TakeDamage(float dmg)
     {

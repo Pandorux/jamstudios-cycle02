@@ -3578,6 +3578,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1246966419}
   m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+--- !u!82 &1333740943 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82905827882933552, guid: 9b8d129cd78b15b42b22f4c9e2a8c9f7,
+    type: 2}
+  m_PrefabInternal: {fileID: 2074210631}
 --- !u!1 &1358867777
 GameObject:
   m_ObjectHideFlags: 0
@@ -5236,16 +5241,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 45
       objectReference: {fileID: 0}
-    - target: {fileID: 114644578210191628, guid: 10dbac2f0b7c6b641a38af56873b18d2,
+    - target: {fileID: 114251525818682608, guid: 10dbac2f0b7c6b641a38af56873b18d2,
         type: 2}
-      propertyPath: fadeInTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114644578210191628, guid: 10dbac2f0b7c6b641a38af56873b18d2,
-        type: 2}
-      propertyPath: fadeOutTime
-      value: 160
-      objectReference: {fileID: 0}
+      propertyPath: sounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 1333740943}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 10dbac2f0b7c6b641a38af56873b18d2, type: 2}
   m_IsPrefabParent: 0

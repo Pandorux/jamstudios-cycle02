@@ -61,8 +61,6 @@ public class AmbientAudio : MonoBehaviour {
 	// Use this for initialization
 	void Awake () 
 	{
-		defaultLoopVolume=loopAudioSource.volume;
-		defaultSoundVolume=soundAudioSource.volume;
 		defaultPitch=soundAudioSource.pitch;
 		defaultPan=soundAudioSource.panStereo;
 		minAreaSize=loopAudioSource.minDistance;
@@ -71,18 +69,24 @@ public class AmbientAudio : MonoBehaviour {
 		SetupSpatialisation(loopAudioSource);
 		SetupSpatialisation(soundAudioSource);
 		SetupSpatialisation(startEndSource);
-
-		if(fadeAudio)
-		{
-			loopAudioSource.volume=0;
-			soundAudioSource.volume=0;
-		}
-
-		if (playOnStart)
-		{
-			StartAudio();
-		}
 	}
+
+    void Start()
+    {
+        defaultLoopVolume = loopAudioSource.volume;
+        defaultSoundVolume = soundAudioSource.volume;
+
+        if (fadeAudio)
+        {
+            loopAudioSource.volume = 0;
+            soundAudioSource.volume = 0;
+        }
+
+        if (playOnStart)
+        {
+            StartAudio();
+        }
+    }
 
 	// Call this to begin playback
 

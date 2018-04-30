@@ -12,7 +12,7 @@ public class MainMenu : SaveableData {
     void Start()
     {
         soundVol.value = GetSoundVolume();
-        musicVol.value = GetSoundVolume();
+        musicVol.value = GetMusicVolume();
     }
 
     public void PlayGame()
@@ -33,7 +33,7 @@ public class MainMenu : SaveableData {
 
     public void SaveMusicVolume()
     {
-        SetSoundVolume(soundVol.value);
+        SetMusicVolume(musicVol.value);
     }
 
 }

@@ -382,6 +382,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a89d2c285e79349b21f9f3107a6943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundSource: {fileID: 82201754923059970}
+  sounds:
+  - {fileID: 82417986291902016}
+  - {fileID: 82799453244076560}
+  - {fileID: 0}
 --- !u!114 &114644578210191628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -399,7 +404,8 @@ MonoBehaviour:
   playOnStart: 1
   randomiseStartPosition: 1
   fadeAudio: 1
-  fadeTime: 5
+  fadeInTime: 5
+  fadeOutTime: 160
   startSound: {fileID: 8300000, guid: bddc0609c21ae1642bfe1240aa1963bb, type: 3}
   endSound: {fileID: 8300000, guid: 4ee36be6c0929d946b386405c4df2b27, type: 3}
   oneShotAudioClips:
